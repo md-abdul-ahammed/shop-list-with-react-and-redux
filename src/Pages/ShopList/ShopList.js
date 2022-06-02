@@ -62,6 +62,7 @@ const ShopList = () => {
         (list) => list[filter.name] === filter.value
       );
       setList(matchedShopList);
+      return;
     }
     setList(shoplist);
   }, [shoplist, filter]);
@@ -130,13 +131,19 @@ const ShopList = () => {
                 <h4 style={{ margin: 0 }}>Shop Status :</h4>
                 <div className="all-areas">
                   <span
-                    onClick={() => handleDate("openingDate")}
+                    onClick={() => {
+                      handleDate("openingDate");
+                      setShowFilter(false);
+                    }}
                     className="badge"
                   >
                     Open
                   </span>
                   <span
-                    onClick={() => handleDate("closeingDate")}
+                    onClick={() => {
+                      handleDate("closeingDate");
+                      setShowFilter(false);
+                    }}
                     className="red-badge"
                   >
                     Close
@@ -188,13 +195,19 @@ const ShopList = () => {
               <h4 style={{ margin: 0 }}>Shop Status :</h4>
               <div className="all-areas">
                 <span
-                  onClick={() => handleDate("openingDate")}
+                  onClick={() => {
+                    handleDate("openingDate");
+                    setShowFilter(false);
+                  }}
                   className="badge"
                 >
                   Open
                 </span>
                 <span
-                  onClick={() => handleDate("closeingDate")}
+                  onClick={() => {
+                    handleDate("closeingDate");
+                    setShowFilter(false);
+                  }}
                   className="red-badge"
                 >
                   Close

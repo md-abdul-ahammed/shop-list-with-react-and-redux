@@ -130,6 +130,9 @@ const CreateShop = () => {
       setShowDateError("Closing date must be grater than opening date");
       return;
     }
+    if (!shopName || !newAreaValue || !newCategoryValue) {
+      return;
+    }
     setShowDateError("");
     console.log(shoplist);
     const data = [
@@ -239,7 +242,6 @@ const CreateShop = () => {
             style={{
               borderColor: showCategoryError && "red",
               outlineColor: showCategoryError && "red",
-              width: "100%",
             }}
             defaultValue={
               selectValueCategory ? selectValueCategory : "category"
@@ -276,7 +278,6 @@ const CreateShop = () => {
         style={{
           borderColor: showDateError && "red",
           outlineColor: showDateError && "red",
-          width: "100%",
         }}
         onChange={handleOnchangeCloseingDate}
         min={
