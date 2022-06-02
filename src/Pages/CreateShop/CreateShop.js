@@ -239,6 +239,7 @@ const CreateShop = () => {
             style={{
               borderColor: showCategoryError && "red",
               outlineColor: showCategoryError && "red",
+              width: "100%",
             }}
             defaultValue={
               selectValueCategory ? selectValueCategory : "category"
@@ -275,6 +276,7 @@ const CreateShop = () => {
         style={{
           borderColor: showDateError && "red",
           outlineColor: showDateError && "red",
+          width: "100%",
         }}
         onChange={handleOnchangeCloseingDate}
         min={
